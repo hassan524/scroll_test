@@ -30,7 +30,6 @@ export default function Layout({ children }: LayoutProps) {
               <h1 className="text-xl font-semibold text-gray-900">My App</h1>
             </div>
 
-            {/* Navigation Tabs */}
             <nav className="flex space-x-8">
               {tabs.map((tab) => {
                 const isActive = pathname === tab.href;
@@ -53,9 +52,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </header>
 
-      {/* Intro Box */}
       <div className="bg-white shadow rounded-lg p-6 mt-32">
-        {/* ✅ Added `mt-32` to visually separate from header */}
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           When navigating between about or dashboard pages after scrolling less
           than the layout padding area, the scroll position remains instead of
@@ -63,7 +60,6 @@ export default function Layout({ children }: LayoutProps) {
         </h1>
       </div>
 
-      {/* Main Content */}
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">{children}</div>
       </main>
