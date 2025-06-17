@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,6 +15,10 @@ export default function Layout({ children }: LayoutProps) {
     { name: "About", href: "/about" },
     { name: "Dashboard", href: "/dashboard" },
   ];
+
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "auto" });
+  // }, [pathname]);
 
   return (
     <div className="min-h-screen bg-gray-50 pt-128">
@@ -48,7 +52,10 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </header>
-      <div className="bg-white shadow rounded-lg p-6">
+
+      {/* Intro Box */}
+      <div className="bg-white shadow rounded-lg p-6 mt-32">
+        {/* ✅ Added `mt-32` to visually separate from header */}
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           When navigating between about or dashboard pages after scrolling less
           than the layout padding area, the scroll position remains instead of
@@ -56,7 +63,8 @@ export default function Layout({ children }: LayoutProps) {
         </h1>
       </div>
 
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 ">
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">{children}</div>
       </main>
     </div>
